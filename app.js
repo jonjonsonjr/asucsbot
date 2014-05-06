@@ -4,12 +4,16 @@ var bot = require('./lib/bot');
 require('./plugins/fortune')(bot);
 
 // reply with a greeting or say 'wat'
-bot.when(/^boten:\s*(hi|hello|hey)?/, function (res, m) {
-  if (m[1]) {
-    res.send(m[1]);
-  } else {
-    res.send('wat');
-  }
+bot.when(/^boten:\s*(hi|hello|hey)/, function (res, m) {
+  res.send(m[1]);
+});
+
+bot.when(/^boten: (.*\S.*) is "(.*\S.*)"$/, function (res, m) {
+  bot.when(new RegExp(m[1]), function (res) {
+    res.send(m[2]);
+  });
+
+  res.send('ok');
 });
 
 bot.when(/\b(ray|sucks|weather)\b/, function (res, m) {
