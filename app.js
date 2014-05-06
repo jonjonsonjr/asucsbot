@@ -12,7 +12,7 @@ bot.when(/^boten:\s*(hi|hello|hey)?/, function (res, m) {
   }
 });
 
-bot.when(/\b(ray|sucks)\b/, function (res, m) {
+bot.when(/\b(ray|sucks|weather)\b/, function (res, m) {
   res.send('ray sucks');
 });
 
