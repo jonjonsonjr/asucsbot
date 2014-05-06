@@ -25,4 +25,8 @@ module.exports = function (bot) {
 
     res.send(f);
   });
+
+  bot.when(/^!help$/, function (res) {
+    res.send('!fortune');
+  });
 };
