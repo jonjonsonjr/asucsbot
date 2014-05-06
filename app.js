@@ -5,7 +5,6 @@ require('./plugins/fortune')(bot);
 require('./plugins/blaze')(bot);
 require('./plugins/remember')(bot);
 
-// reply with a greeting or say 'wat'
 bot.when(/^boten:\s*(hi|hello|hey)/, function (res, m) {
   res.send(m[1]);
 });
