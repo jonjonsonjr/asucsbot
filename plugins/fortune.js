@@ -19,14 +19,14 @@ module.exports = function (bot) {
     "Vim is better than emacs"
   ];
 
-  bot.when(/^!fortune$/, function (res, m) {
+  bot.on(/^!fortune$/, function (req, res) {
     var i = Math.floor(Math.random() * fortunes.length);
     var f = fortunes[i];
 
     res.send(f);
   });
 
-  bot.when(/^!help$/, function (res) {
+  bot.on(/^!help$/, function (req, res) {
     res.send('!fortune');
   });
 };

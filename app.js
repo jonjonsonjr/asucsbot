@@ -5,11 +5,11 @@ require('./plugins/fortune')(bot);
 require('./plugins/blaze')(bot);
 require('./plugins/remember')(bot);
 
-bot.when(/^boten:\s*(hi|hello|hey)/, function (res, m) {
-  res.send(m[1]);
+bot.on(/^boten:\s*(hi|hello|hey)/, function (req, res) {
+  res.send(req.matches[1]);
 });
 
-bot.when(/\b(ray|sucks|weather)\b/, function (res, m) {
+bot.on(/\b(ray|sucks|weather)\b/, function (req, res) {
   res.send('ray sucks');
 });
 

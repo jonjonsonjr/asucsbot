@@ -1,13 +1,14 @@
 module.exports = function (bot) {
-  bot.when(/^boten: (.*\S.*) is "(.*\S.*)"$/, function (res, m) {
-    bot.when(new RegExp(m[1]), function (res) {
-      res.send(m[2]);
+  bot.on(/^boten: (.*\S.*) is "(.*\S.*)"$/, function (req, res) {
+    var reply = req.matches[2];
+    bot.on(new RegExp(req.matches[1]), function (req, res) {
+      res.send(reply);
     });
 
     res.send('ok');
   });
 
-  bot.when(/^!help$/, function (res) {
+  bot.on(/^!help$/, function (req, res) {
     res.send(bot.name + ': <regex> is "<response>"');
   });
 };
