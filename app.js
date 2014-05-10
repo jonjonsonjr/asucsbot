@@ -1,7 +1,7 @@
 var ircbot = require('irc-robot');
 
 var bot = ircbot({
-  name: 'boten',
+  name: 'asucsbot',
   pass: 'password',
   chan: '#asucs'
 });
@@ -11,7 +11,7 @@ require('./plugins/fortune')(bot);
 require('./plugins/blaze')(bot);
 require('./plugins/remember')(bot);
 
-bot.on(/^boten:\s*(hi|hello|hey)/, function (req, res) {
+bot.on(/^asucsbot:\s*(hi|hello|hey)/, function (req, res) {
   res.send(req.matches[1]);
 });
 
