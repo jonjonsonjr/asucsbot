@@ -16,6 +16,8 @@ Run:
 
 	$ node app
 
+## Contributing
+
 Feel free to send pull requests if you want to add anything.
 
 Check out the [irc-robot](https://github.com/jonjonsonjr/irc-robot) package for help.
