@@ -1,4 +1,10 @@
-var bot = require('./lib/bot');
+var ircbot = require('irc-robot');
+
+var bot = ircbot({
+  name: 'boten',
+  pass: 'password',
+  chan: '#asucs'
+});
 
 // plugins
 require('./plugins/fortune')(bot);
@@ -13,4 +19,4 @@ bot.on(/\b(ray|sucks|weather)\b/, function (req, res) {
   res.send('ray sucks');
 });
 
-bot.connect('boten', 'password', '#asucs');
+bot.connect();
